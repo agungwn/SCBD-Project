@@ -1,0 +1,144 @@
+<head>
+  <title>SCBD Dashboard</title>
+  <link
+    rel="icon"
+    type="x-icon"
+    href="https://i.ibb.co/M1pLPhT/favicon-32x32.png"
+  />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Ini mencegah munculnya scrollbar */
+      width: 100%;
+      height: 100%;
+    }
+
+    #wrapper {
+      transform-origin: top left;
+      width: 1366px;
+      height: 768px;
+      transform: scale(1);
+    }
+
+    body {
+      background-color: #1155cc;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- Frame pertama dengan transparansi rendah -->
+    <iframe
+      style="
+        width: 287px;
+        height: 250px;
+        top: 319px;
+        left: 13px;
+        border: 1px solid #000000;
+        position: absolute;
+        background-color: #ff0000;
+        opacity: 0.25;
+      "
+    ></iframe>
+
+    <!-- Google Spreadsheet Chart -->
+    <iframe
+      width="1358"
+      height="752"
+      frameborder="0"
+      scrolling="no"
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVwk-IAbqRhmk1-YXd4vf3v3qBfot9LYzGPloQqJiL-xWJZGFSp4CFaAdXITVEj9Sf_g2PF6Y3d1rf/pubchart?oid=821756904&amp;format=interactive"
+    ></iframe>
+
+    <!-- Gambar atau Clock -->
+    <iframe
+      style="
+        width: 300px;
+        height: 83px;
+        top: 10px;
+        left: 1040px;
+        display: block;
+        position: absolute;
+      "
+      src="https://lh3.googleusercontent.com/pw/ADCreHdCRYm1obN2IoL9f95o8LImf1-TA7bm3JCdxfJrZbnwwClHyhMGJoyTrtrsk2VL6iXSMK-56SWkrckV0-R6fS6HWH98C4NQjWr5AS47mC1Hw11I8e1TZoGdLPMkbwgH37MS6PyrsWUv4dLKcNnyIFG2=w300-h83-s-no-gm?authuser=0"
+      frameborder="0"
+    ></iframe>
+
+    <!-- Clock lainnya -->
+    <iframe
+      style="
+        width: 550px;
+        height: 32px;
+        top: 725px;
+        left: 400px;
+        position: absolute;
+      "
+      src="https://lh3.googleusercontent.com/pw/AP1GczNF7QZHNop44QdPpAd-u_We7iUnfNbP6biVqEJ_Sw0VJUQHz9fBG01SJ3RFri0W7HfQ5xuXbJkjZxDCliFoVeamnYe7v0CHpwlkUqMTLNY7Sh3Yu3TpRfZMM3Nn7Ue8gyL0dx-VUJQ3hmYPcrULXffg=w550-h32-s-no-gm"
+      frameborder="0"
+      allowtransparency="true"
+    ></iframe>
+
+    <!-- Jam dengan desain khusus -->
+    <iframe
+      style="
+        width: 110px;
+        height: 110px;
+        top: 15px;
+        left: 15px;
+        display: block;
+        position: absolute;
+      "
+      src="https://free.timeanddate.com/clock/i8kxjw6v/n2644/szw110/szh110/hocff0/hbw2/cf100/hnc15d/fan3/fas22/facff0/fdi76/mqcff0/mql10/mqw4/mqd98/mhcff0/mhl10/mhw4/mhd98/mmcff0/mml10/mmw1/mmd98/hwm2/hss1"
+      frameborder="0"
+    ></iframe>
+
+    <!-- Countdown untuk tanggal tertentu -->
+    <iframe
+      style="
+        width: 314px;
+        height: 19px;
+        top: 72px;
+        left: 523px;
+        display: block;
+        position: absolute;
+      "
+      src="https://free.timeanddate.com/countdown/i8kz8ljf/n2644/cf11/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss0/cacff0/cpc000/pct/tc66c/fn3/fs100/szw320/szh135/iso2025-12-31T23:59:59"
+      frameborder="0"
+      allowtransparency="true"
+    ></iframe>
+
+    <!-- Jam dengan format lainnya -->
+    <iframe
+      style="
+        width: 450px;
+        height: 30px;
+        top: 10px;
+        left: 450px;
+        display: block;
+        position: absolute;
+      "
+      src="https://free.timeanddate.com/clock/i8kxmnu1/n2644/tlid38/fn2/fs20/fcfff/tct/pct/ftb/tt1/td1"
+      frameborder="0"
+      allowtransparency="true"
+    ></iframe>
+  </div>
+  <script>
+    // Fungsi untuk menyesuaikan skala tampilan berdasarkan ukuran layar
+    function scalePage() {
+      const baseWidth = 1366;
+      const baseHeight = 768;
+      const scaleX = window.innerWidth / baseWidth;
+      const scaleY = window.innerHeight / baseHeight;
+      const scale = Math.min(scaleX, scaleY);
+
+      const wrapper = document.getElementById("wrapper");
+      wrapper.style.transform = `scale(${scale})`;
+    }
+
+    window.addEventListener("resize", scalePage);
+    window.addEventListener("load", scalePage);
+  </script>
+</body>
